@@ -1,7 +1,6 @@
-
-const bar = document.getElementById('bar');
-const close = document.getElementById('close');
-const nav = document.getElementById('navbar');
+var bar = document.getElementById('bar');
+var close = document.getElementById('close');
+var nav = document.getElementById('navbar');
 
 if (bar) {
     bar.addEventListener('click', () => {

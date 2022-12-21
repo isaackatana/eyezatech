@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -7,10 +8,13 @@
 
 body {
     background: rgb(133, 132, 132) ;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
-
-/*................... HOME ...................*/
-
 header {
     width: 100%;
     display: flex;
@@ -22,7 +26,7 @@ header {
     padding-right: 80px;
     position: sticky;
     top: 0;
-    left: 0;
+    right: 0;
 }
 
 header #bar {
@@ -56,19 +60,24 @@ nav a::after{
 }
 
 #container {
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-        padding: 0 80px 0 80px;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 }
 
-/*................... BLOG ...................*/
+.articles {
+    width: 100%;
+    height: 100vh;
+    padding: 20px 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:flex-start;
+    margin-bottom: auto;
+}
 
 .post {
     width: 100%;
@@ -76,11 +85,10 @@ nav a::after{
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     background-color: rgb(241, 241, 241);
     border-radius: 20px;
-    border-bottom-left-radius: 0px;
-    border-top-left-radius: 0px;
+    
 }
 
 .post img {
@@ -94,6 +102,8 @@ nav a::after{
     padding: 20px;
     background-color: #fff;
     border-radius: 10px;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
 }
 
 .post-details h2 {
@@ -122,15 +132,24 @@ nav a::after{
     color: #fff;
 }
 
+.single-post {
+    padding: 30px 80px;
+}
+
 .single-post-details {
     width: 100%;
-    height: 90vh;
+    height: 100vh;
     align-items: center;
     justify-content: center;
     padding: 30px;
     background-color: #fff;
-    border-radius: 10px;
+    border-radius: 20px;
 }
+
+.single-post-details h1 {
+    margin-bottom: 10px;
+}
+
 
 .single-post-details h2 {
     margin-bottom: 10px;
@@ -181,9 +200,10 @@ nav a::after{
     border: none;
 }
 
-/*................... FOOTER ...................*/
-
 footer {
+    width: 100%;
+    position: relative;
+    bottom: 0;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -197,20 +217,125 @@ footer p {
     padding: 20px 80px 20px 80px;
 }
 
-/*................... media query ...................*/
+/*.....contact.....*/
+
+#container {
+    width: 100%;
+}
+
+#contact {
+    width: 100%;
+    height: 100vh;
+    padding: 20px 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content:flex-start;
+    margin-bottom: auto;
+}
+
+.team {
+    width: 100%;
+    display: flex;
+    flex-direction: column;    
+}
+
+#member {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.profile-pic {
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    border-radius: 25px;
+    margin: 10px;
+}
+
+form {
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.40em;
+    background-color: #27AAE1;
+    border-radius: 20px;
+}
+
+form input {
+    padding: 20px;
+    border-radius: 10px;
+    border: none;
+}
+
+form textarea {
+    border-radius: 10px;
+    padding: 20px;
+}
+
+form button {
+    padding: 20px;
+    border-radius: 10px;
+    border: none;
+}
+
+form button:hover {
+    background-color: #27AAE1;
+    color: #fff;
+}
 
 
-@media (max-width: 700px){
-    header {
-        padding: 0px 0px 0px 30px;
+
+/*.....Media Query.....*/
+
+@media (max-width: 799px){
+    body {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        align-items: center;
+        justify-content: center;
     }
+
+    header {
+        padding: 0px 30px 0px 30px;
+    }
+
+    #container {
+       width: 100%;
+       height: 100%;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+       overflow: hidden;
+    }
+
     nav {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
-        gap: 25px;
+        position: fixed;
+        top: 0;
+        right: -300px;
+        height: 100vh;
+        width: 300px;
         background-color: rgb(192, 192, 192);
+        transition: 0.3s;
+    }
+
+   .active {
+        right: 0px;
+    }
+
+    nav a {
+        margin-top:  10px;
+        margin-bottom:  10px;
     }
 
     header #bar {
@@ -221,21 +346,49 @@ footer p {
     nav #close {
         display: flex;
         width: 25px;
-    }
-
-    #container {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-        padding: 0 30px 0 30px;
+        margin: 30px;
     }
 
     .post {
         width: 100%;
+        margin: 10px 0;
     }
 
     .post-details {
-        padding: ;
+        width: 100%;
     }
+
+    .articles {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 10px 30px;
+    }
+    .single-post {
+        width: 100%;
+        padding: 20px 30px;
+    }
+
+    .single-post-details h1 {
+        font-size: 24px;
+    }
+
+    .single-post-details button {
+        padding: 5px 8px 5px 8px;
+        width: 100px;
+        margin-right: 5px;
+    }
+
+    footer {
+        position: relative;
+    }
+
+    footer p{
+        padding: 20px 20px;
+    }
+    
 }
+
