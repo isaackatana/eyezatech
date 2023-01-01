@@ -12,9 +12,10 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: flex-start;
 }
+
 header {
     width: 100%;
     display: flex;
@@ -80,6 +81,7 @@ nav a::after{
 
 .post {
     width: 50%;
+    font-size: 13px;
     margin: 10px 0px;
     display: flex;
     flex-direction: column;
@@ -87,10 +89,16 @@ nav a::after{
     justify-content: flex-start;
     background-color: rgb(241, 241, 241);
     border-radius: 20px;
+    transition: 0.3s;
 }
 
 .post img {
     width: 150px;
+}
+
+.post:hover {
+    background-color: #bebebe;
+    cursor: pointer;
 }
 
 .post-details {
@@ -111,7 +119,7 @@ nav a::after{
 .post-details p {
     text-align: left;
     margin-bottom: 10px;
-    font-size: 15px;
+    font-size: 13px;
 }
 
 .post-details button {
@@ -130,13 +138,23 @@ nav a::after{
     color: #fff;
 }
 
+#post-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px 80px 20px 80px;
+}
+
 .single-post {
     padding: 0px;
 }
 
 .single-post-details {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     align-items: center;
     justify-content: center;
     padding: 30px;
@@ -160,10 +178,9 @@ nav a::after{
 }
 
 .single-post-details button {
-    padding: 5px 8px 5px 8px;
-    width: 150px;
+    padding: 20px;
     border-radius: 20px;
-    margin-right: 20px;
+    margin-right: 10px;
     text-align: center;
     border: none;
     background-color: black;
@@ -173,6 +190,31 @@ nav a::after{
 .single-post-details button:hover {
     background-color: #27AAE1;
     color: #fff;
+}
+
+.pagination {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding-bottom: 20px;
+}
+
+.pagination div {
+    background-color: #000000;
+    padding: 25px;
+    width: 25px;
+    height: 25px;
+    border-radius: 12.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+}
+
+.pagination div:hover{
+    background-color: #186688;
 }
 
 #newsletter {
@@ -200,7 +242,9 @@ nav a::after{
 
 footer {
     width: 100%;
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: rgb(241, 241, 241);
     color: rgb(133, 132, 132);
 }
@@ -209,6 +253,64 @@ footer p {
     padding: 20px 80px 20px 80px;
     text-align: center;
 }
+
+footer .social-media-links {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+footer .social-media-links div{
+     width: 25px;
+     height: 25px;
+     background-color: #27AAE1;
+     border-radius: 12.5px;
+}
+
+/*.....portfolio.....*/
+
+#hero {
+    width: 100%;
+}
+
+.category {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px 80px 20px 80px;
+}
+
+.category .row{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.category .row div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+    background-color: #fff;
+    margin: 10px 10px;
+    transition: 0.3s;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.category .row div:hover {
+    background-color: rgb(187, 187, 187);
+}
+
+/*.....about.....*/
+
+
 
 /*.....contact.....*/
 
@@ -252,14 +354,15 @@ footer p {
 form {
     width: 100%;
     height: auto;
-    padding: 20px 40px;
+    padding: 20px 20px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     justify-content: flex-start;
     gap: 0.40em;
-    background-color: #27AAE1;
+    background-color: #c2c2c2;
     border-radius: 10px;
+    color: #fff;
 }
 
 form div {
@@ -269,23 +372,35 @@ form div {
     justify-content: flex-start;
     text-align: left;
 }
+form h4 {
+    margin-bottom: 10px;
+}
 
 form input {
     width: 100%;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 10px;
+    border-radius: 30px;
     border: none;
+    margin-bottom: 12px;
+    background-color: #7e7e7e;
+    padding: 10px 20px;
+}
+
+
+form ::placeholder{
+    color: #fff;
 }
 
 form textarea {
     width: 100%;
     border-radius:  10px;
     padding: 10px 20px;
+    background-color: #7e7e7e;
 }
 
 form button {
     width: 50%;
-    padding: 20px;
+    padding: 10px;
     border-radius: 20px;
     border: none;
     margin-top: 12px;
@@ -310,7 +425,7 @@ form button:hover {
     }
 
     header {
-        padding: 0px 30px 0px 30px;
+        padding: 0px 15px;
         position: sticky;
     }
 
@@ -360,7 +475,7 @@ form button:hover {
 
     .post {
         width: 100%;
-        margin: 10px 0;
+        margin: 10px 0px;
     }
 
     .post-details {
@@ -382,14 +497,32 @@ form button:hover {
         padding: 0px;
     }
 
+    .single-post-details {
+        padding: 15px;
+    }
+
     .single-post-details h1 {
-        font-size: 24px;
+        font-size: 17px;
+    }
+
+    .single-post-details p {
+        font-size: 13px;
     }
 
     .single-post-details button {
-        padding: 5px 8px 5px 8px;
-        width: 100px;
-        margin-right: 5px;
+        padding: 15px;
+        border-radius: 20px;
+        margin-right: 0px;
+        text-align: center;
+        border: none;
+        background-color: black;
+        color: #fff;
+    }
+
+    .pagination {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     #contact {
@@ -401,6 +534,38 @@ form button:hover {
     footer p{
         padding: 20px 20px;
     }
+
+
+    .category {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 30px;
+    }
+
+    .category .row {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .category .row div {
+        width: 100%;
+        margin: 10px 0px;
+    }
     
 }
 
+
+@media (max-width: 499px){
+    #container {
+        padding: 0px 15px;
+    }
+
+    #post-container {
+        padding: 1px 15px;
+    }
+    
+}
